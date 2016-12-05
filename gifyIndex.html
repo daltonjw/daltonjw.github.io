@@ -1,0 +1,32 @@
+<html>
+<head>
+	<title>GifTastic</title>
+	<style type="text/css">
+		button, div, form, input {
+			margin: 10px;
+		}
+	</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Gif Search</h1>
+
+  <!-- Rendered Buttons will get Dumped Here  -->
+  <div id="buttonsView"></div>
+
+  <form id="gif-form">
+    <label for="gif-input">Add a Gif Bro</label>
+    <input type="text" id="gif-input"><br>
+    
+    <!-- Button triggers new gif button to be added -->
+    <input id="addGif" type="submit" value="Add a Gif Bro">
+  </form>
+
+
+  <!-- Gifs will Get Dumped Dere -->
+  <div id="gifView"></div>
+
+<!-- jquery and javscript file links -->
+<script src='http://code.jquery.com/jquery-2.1.3.min.js'></script>
+<script src="gifyApp.js"></script>
