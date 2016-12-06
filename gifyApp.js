@@ -47,7 +47,7 @@ function renderButtons()
 	function displayGif(){
 
 		var gif = $(this).attr('data-name');
-		var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + gif + "&limit=" + numResults + "&api_key=" + authKey;
+		var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + gif + "&limit=" + numResults + "&api_key=" + authKey;
 		
 		// Creates AJAX call for the specific gif/button being 
 		$.ajax({url: queryURL, method: 'GET'}).done(function(response) {
