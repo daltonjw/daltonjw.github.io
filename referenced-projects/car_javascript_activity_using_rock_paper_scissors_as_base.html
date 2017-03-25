@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Car Adventures!</title>
+</head>
+<body>
+
+<!-- This is where the code will go that we created. -->
+<div id="game">
+  <h1>Car Adventures!</h1>
+  <p>Type "h" to honk, "d" to drive to work, "w" to drive around the world, or "t" to get a tuneup.</p>
+  <p>See console for stats.</p>
+</div>
+
+<script type="text/javascript">
+
+  // Declaring car object and associated parameters
+  var car = {
+    make: "Honda",
+    model: "Fit",
+    color: "Blue Rasberry",
+    mileage: 3000,
+    isWorking: true,
+
+    // Declaring functions as part of the car object
+
+    driveToWork: function(){
+
+      alert("Old Mileage: " + this.mileage)
+      
+      this.mileage = this.mileage + 8;
+      
+      alert("New mileage: " + this.mileage);
+    },
+
+    driveAroundWorld: function(){
+
+      alert("Old Mileage: " + this.mileage);
+
+      this.mileage = this.mileage + 24000;
+
+      alert("New Mileage: " + this.mileage);
+      alert("Car needs a tuneup!")
+
+      this.isWorking = false;
+    },
+
+    getTuneUp: function(){
+      alert("Car is ready to go!");
+      this.isWorking = true;
+    },
+
+    honk: function(){
+      alert("Meeeeeeeeowwwww")
+    } 
+  }
+
+// Defining global function to take the tallies and display them in Console log
+function reWriteStats(){
+  console.log("-----------------");
+  console.log("Displaying Car's values below");
+  console.log("-----------------");
+  console.log(car.make);
+  console.log(car.model);
+  console.log(car.color);
+  console.log(car.mileage);
+  console.log(car.isWorking);
+}
+// When the user presses the key it records the keypress and then sets it to userguess
+document.onkeyup = function(event) {
+  var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
+
+  // Making sure the user chooses h, d, w, or t
+  if ((userGuess == "h") || (userGuess == "d") || (userGuess == "w") || (userGuess == "t")){
+
+    // Checks to see what key the user pressed. 
+    if ((userGuess == "h")) {
+      car.honk();
+      reWriteStats();
+    }else if ((userGuess == "d")){
+      car.driveToWork();
+      reWriteStats();
+    }else if ((userGuess == "w")) { 
+      car.driveAroundWorld();
+      reWriteStats();
+    }else if ((userGuess == "t")) {
+      car.getTuneUp();
+      reWriteStats();
+    }  
+
+  }
+}
+</script>
+</body>
+</html>
